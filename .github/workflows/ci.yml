@@ -37,6 +37,15 @@ jobs:
         login-server: ${{ secrets.BASEACR_LOGIN_SERVER  }}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    - name: 'MY ACR login'
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.MY_ACR_LOGIN_SERVER  }}
+        username: ${{ secrets.MY_REGISTRY_USERNAME }}
+        password: ${{ secrets.MY_REGISTRY_PASSWORD }}
+
+    
     - name: 'Check PWD'
       run: |
           echo "`ls`"
